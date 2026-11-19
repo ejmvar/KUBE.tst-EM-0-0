@@ -1,0 +1,4 @@
+[tasks.backend-test-local]
+description = "Run the backend local-mode test three times"
+dir = "backend"
+run = "uv run --group dev pytest tests/test_app_local.py -q --count=3"
