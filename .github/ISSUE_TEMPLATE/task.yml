@@ -1,0 +1,16 @@
+name: Task Request
+description: Request a new task, feature, or bot action
+title: "[TASK]: "
+labels: ["type:feature"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please provide the details for the task you want the bot or a contributor to execute."
+  - type: textarea
+    id: description
+    attributes:
+      label: Task Description
+      description: What exactly needs to be done?
+      placeholder: Enter the technical requirements here...
+    validations:
+      required: true
