@@ -2,3 +2,7 @@
 description = "Run the backend local-mode test three times"
 dir = "backend"
 run = "uv run --group dev pytest tests/test_app_local.py -q --count=3"
+
+[tasks.backend-image-build-local]
+description = "Build the backend Docker image for local development"
+run = "docker build -t joke-app:1.0 -f backend/src/backend/Dockerfile backend"

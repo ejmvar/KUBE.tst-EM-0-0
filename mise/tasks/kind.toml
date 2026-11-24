@@ -1,0 +1,11 @@
+["kind:up"]
+description = "Create the em-tst-00 local kind lab"
+run = "bash scripts/kind-lab.sh up"
+
+["kind:check"]
+description = "Check the em-tst-00 API and node readiness"
+run = "bash scripts/kind-lab.sh check"
+
+["kind:down"]
+description = "Delete only the em-tst-00 local kind lab"
+run = "bash scripts/kind-lab.sh down"
