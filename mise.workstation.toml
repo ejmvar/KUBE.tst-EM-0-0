@@ -1,0 +1,131 @@
+[tools]
+# Python is provided by uv so the free-threaded build can be used.
+
+# mise settings set python.compile=false
+#python = "3.14t"
+uv = "latest"
+cmake = "3.30"
+ninja = "1.12"
+ccache = "latest"
+usage = "latest"
+shellcheck = "latest"
+#terraform = "latest"
+
+# ### KIND + KUBERNETES ### #
+
+"cargo:worktrunk" = "latest"
+#"cargo" = "latest"
+
+
+# ------------------------------
+
+# ::::::::::::::::::::::::::::::
+
+# hunk PR s diff management
+#https://github.com/modem-dev/hunk
+#"node:npm i -g hunkdiff"
+"npm:hunkdiff" = "latest"
+herdr = "latest"
+# ["npm:hunk"] = "latest"
+# # ["pnpm:hunk"] = "latest"
+# # ["pnpm:hunkdiff"] = "latest"
+# # # ["pnpm:defuddle"] = "latest"
+# # # ["pnpm:defuddle"] = "latest"
+# # # ["pnpm:defuddle"] = "latest"
+
+# ------------------------------
+# npm install -g agent-browser
+"npm:agent-browser" = "latest"
+chezmoi = "2.73.3"
+fastfetch = "latest"
+
+
+
+
+k3sup = "latest"
+kustomize = "latest"
+# opentofu  OpenTofu lets you declaratively manage your cloud infrastructure. https://github.com/opentofu/opentofu
+opentofu = "latest"
+k0sctl = "latest"
+# then run: 
+# agent-browser install --with-deps
+
+
+
+# https://mise.jdx.dev/registry.html
+kuttl = "latest"
+kubectl-kuttl = "latest"
+# "aqua:kudobuilder/kuttl" = "latest"
+minikube="latest"
+# https://github.com/kubernetes/kubernetes
+helm = "latest"
+# https://github.com/jonashackt/crossplane-kuttl
+timoni = { version = "latest", workflow = "release.yaml" }
+krew = "latest"
+# cue                       The home of the CUE language! Validate and define text-based and dynamic configuration. https://github.com/cue-lang/cue
+cue = "latest"
+# k9s   Kubernetes CLI To Manage Your Clusters In Style. https://github.com/derailed/k9s
+k9s = "latest"
+
+# stern                    ⎈ Multi pod and container log tailing for Kubernetes -- Friendly fork of https://github.com/wercker/stern. https://github.com/stern/stern
+stern = "latest"
+
+# kubie                      A more powerful alternative to kubectx and kubens. https://github.com/kubie-org/kubie
+kubie = "latest"
+
+
+# ==============================
+
+[env]
+_.python.venv = { path = ".venv" }
+
+# to obtain ESPRESSIF environment
+# env -i bash -c '. ~/.espressif/v6.0.2/esp-idf/export.sh && env' | grep -E '^(IDF_|PATH|VIRTUAL_ENV)' > ~/.espressif/v6.0.2/idf_env.txt
+# env -i bash -c '. ~/.espressif/v6.0.2/esp-idf/export.sh && env' | grep -E '^(IDF_|PATH|VIRTUAL_ENV)' > ~/.espressif/v6.0.2/idf_env.txt
+# 20260812-110913
+# ❯ . ~/.espressif/v6.0.2/esp-idf/export.sh ; env | grep -E '^(IDF_|PATH|VIRTUAL_ENV)' > idf_env.txt
+# 20260812-111203
+# 20260812-112248
+# bash -c 'source ~/.espressif/v6.0.2/esp-idf/export.sh >/dev/null 2>&1 && export -p | grep -E "(IDF_|PATH=|VIRTUAL_ENV=)"' > 00-ideas/idf_fast_export.sh
+# 20260812-112817
+_.source=[
+    # AI API Keys
+    "~/bin/SECRETS/OpenCode.AI/EXPORT_SECRET_OPENCODE_APIKEY.sh",
+    "~/bin/SECRETS/Gemini-Google-Project-20260701/GEMINI_API_KEY.sh",
+    "~/bin/SECRETS/OpenCode.AI/EXPORT_SECRET_OPENCODE_APIKEY.sh",
+    "~/bin/SECRETS/OpenRouter.AI/EXPORT_SECRET_OPENROUTER_APIKEY.sh",
+#    # ESP-IDF Toolchain paths
+#    #"~/.espressif/v6.0.2/esp-idf/export.sh"
+#    #"00-ideas/idf_env.txt"
+    
+    # ESP-IDF is loaded by scripts/idf-env.sh, not by mise.
+    # "~/.espressif/v6.0.2/esp-idf/export.sh"
+    
+]
+
+# 1. ESP-IDF Base Configuration
+#IDF_PATH = "~/esp/esp-idf"
+IDF_CCACHE_ENABLE = "1"
+
+
+
+# ESPRESSIF-INSTALLER.sh
+
+#[env]
+#[[env]]
+# Path to your ESP-IDF directory (if installed via git or ESP-IDF Installation Manager)
+# IDF_PATH = "{{config_root}}/esp-idf"
+# ------------------------------
+# # 20260812-112612 removed
+# IDF_PYTHON_ENV_PATH="/home/qq/.espressif/python_env/idf6.0_py3.14_env"
+# IDF_PATH="/home/qq/.espressif/v6.0.2/esp-idf"
+# ESP_IDF_VERSION="6.0"
+# IDF_PY_COMP_WORDBREAKS=" "
+# IDF_DEACTIVATE_FILE_PATH="/tmp/tmp_0yuc9ziidf_1686065"
+
+# IDF_TOOLS_EXPORT_CMD="/home/qq/.espressif/v6.0.2/esp-idf/export.sh"
+# IDF_TOOLS_INSTALL_CMD="/home/qq/.espressif/v6.0.2/esp-idf/install.sh"
+# ------------------------------
+
+
+
