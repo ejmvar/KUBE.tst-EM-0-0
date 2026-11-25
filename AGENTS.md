@@ -11,9 +11,14 @@
 
 
 ## Tooling
+For every executable workflow documented under `docs/`, put the implementation
+in `scripts/` and expose it through Make, Just, and mise. Add a read-only
+`scripts/<workflow>-explanation.sh` with the objective, ordered steps, and
+success and failure signals for each step. Expose the explanation through all
+three runners and link it from the runbook.
+
 always keep necessary scripts and helpers in:
 - ./scripts/ folder : to ensure simple repeatable execution
 - makefile: also add help entry to simplify onboarding for users, developers, deployers, etc
 - just : same objective
 - mise task : under ./mise/
-
