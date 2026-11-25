@@ -95,3 +95,27 @@ backend-local-check:
 # Explain local Flask verification.
 backend-local-explanation:
     @bash scripts/backend-local-explanation.sh
+
+# Build a versioned backend image.
+backend-kind-build:
+    bash scripts/backend-kind.sh build
+
+# Load the image into the kind nodes.
+backend-kind-load:
+    mise run backend:kind:load
+
+# Deploy the first backend version in kind.
+backend-kind-deploy:
+    mise run backend:kind:deploy
+
+# Replace the running backend image in kind.
+backend-kind-rollout:
+    mise run backend:kind:rollout
+
+# Forward the backend Service to port 8082.
+backend-kind-forward:
+    mise run backend:kind:forward
+
+# Explain the versioned backend workflow.
+backend-kind-explanation:
+    @bash scripts/backend-kind-explanation.sh

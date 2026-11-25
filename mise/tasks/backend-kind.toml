@@ -1,0 +1,23 @@
+["backend:kind:build"]
+description = "Build a new local backend image tag"
+run = "bash scripts/backend-kind.sh build"
+
+["backend:kind:load"]
+description = "Load the backend image into kind nodes"
+run = "bash scripts/backend-kind.sh load"
+
+["backend:kind:deploy"]
+description = "Deploy the first backend release to kind"
+run = "bash scripts/backend-kind.sh deploy"
+
+["backend:kind:rollout"]
+description = "Roll out a new backend image in kind"
+run = "bash scripts/backend-kind.sh rollout"
+
+["backend:kind:forward"]
+description = "Forward the kind backend Service to local port 8082"
+run = "bash scripts/backend-kind.sh forward"
+
+["backend:kind:explanation"]
+description = "Explain the kind backend release workflow"
+run = "bash scripts/backend-kind-explanation.sh"

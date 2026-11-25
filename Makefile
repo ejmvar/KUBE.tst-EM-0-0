@@ -34,5 +34,20 @@ backend-local-explanation: # explain local Flask verification
 	bash scripts/backend-local-explanation.sh
 
 
+.PHONY: backend-kind-build backend-kind-load backend-kind-deploy backend-kind-rollout backend-kind-forward backend-kind-explanation
+backend-kind-build: # build a versioned backend image
+	bash scripts/backend-kind.sh build
+backend-kind-load: # load the image into the kind nodes
+	mise run backend:kind:load
+backend-kind-deploy: # deploy the first backend version in kind
+	mise run backend:kind:deploy
+backend-kind-rollout: # replace the running backend image in kind
+	mise run backend:kind:rollout
+backend-kind-forward: # forward the backend Service to port 8082
+	mise run backend:kind:forward
+backend-kind-explanation: # explain the versioned backend workflow
+	bash scripts/backend-kind-explanation.sh
+
+
 help: # show available development and kind commands
 	@grep -E '^[a-zA-Z0-9_-]+:.*#' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*# "}; {printf "%-24s %s\n", $$1, $$2}'
