@@ -49,5 +49,23 @@ backend-kind-explanation: # explain the versioned backend workflow
 	bash scripts/backend-kind-explanation.sh
 
 
+kind-phase0-explanation: # explain the Phase 0 workflow
+	bash scripts/kind-phase0-explanation.sh
+kind-phase0-stage-acer: # copy lab files to Acer over SSH
+	bash scripts/kind-phase0.sh stage-acer
+kind-phase0-preflight: # check the target host and container runtime
+	mise run kind:phase0:preflight
+kind-phase0-install-tools: # install the pinned kind and kubectl versions
+	bash scripts/kind-phase0.sh install-tools
+kind-phase0-check: # check the existing lab without changing it
+	mise run kind:phase0:check
+kind-phase0-smoke: # create, check, and delete a disposable lab
+	mise run kind:phase0:smoke
+backend-smoke-acer: # on Acer, verify backend HTTP and rollback
+	mise run backend:smoke-acer
+backend-smoke-acer-explanation: # explain the backend smoke workflow
+	bash scripts/backend-smoke-acer-explanation.sh
+
+
 help: # show available development and kind commands
 	@grep -E '^[a-zA-Z0-9_-]+:.*#' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*# "}; {printf "%-24s %s\n", $$1, $$2}'

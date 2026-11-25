@@ -119,3 +119,35 @@ backend-kind-forward:
 # Explain the versioned backend workflow.
 backend-kind-explanation:
     @bash scripts/backend-kind-explanation.sh
+
+# Explain the Phase 0 workflow.
+kind-phase0-explanation:
+    @bash scripts/kind-phase0-explanation.sh
+
+# Copy lab files to Acer over SSH.
+kind-phase0-stage-acer:
+    bash scripts/kind-phase0.sh stage-acer
+
+# Check the target host and container runtime.
+kind-phase0-preflight:
+    mise run kind:phase0:preflight
+
+# Install the pinned kind and kubectl versions.
+kind-phase0-install-tools:
+    bash scripts/kind-phase0.sh install-tools
+
+# Check the existing lab without changing it.
+kind-phase0-check:
+    mise run kind:phase0:check
+
+# Create, check, and delete a disposable lab.
+kind-phase0-smoke:
+    mise run kind:phase0:smoke
+
+# On Acer, verify backend HTTP and rollback.
+backend-smoke-acer:
+    mise run backend:smoke-acer
+
+# Explain the backend smoke workflow.
+backend-smoke-acer-explanation:
+    @bash scripts/backend-smoke-acer-explanation.sh

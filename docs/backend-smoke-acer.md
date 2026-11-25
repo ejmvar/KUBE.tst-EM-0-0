@@ -18,7 +18,8 @@ mise run backend:smoke-acer
 ```
 
 `make backend-smoke-acer` and `just backend-smoke-acer` run the same
-`scripts/backend-smoke-acer.sh` workflow. It only targets `kind-em-tst-00`.
+`scripts/backend-smoke-acer.sh` workflow. It targets the lab set in root
+`env` (`kind-em-tst-00` by default).
 
 ## What the script does
 1. Over SSH, use `kubectl --context kind-em-tst-00` explicitly. Build an

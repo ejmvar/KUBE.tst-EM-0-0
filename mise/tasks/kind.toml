@@ -17,3 +17,35 @@ run = "bash scripts/kind-lab.sh namespace"
 ["kind:profile-rebuild:explanation"]
 description = "Explain old-cluster removal and new-profile creation"
 run = "bash scripts/kind-profile-rebuild-explanation.sh"
+
+["kind:phase0:explanation"]
+description = "Explain Phase 0 steps and expected results without running them"
+run = "bash scripts/kind-phase0-explanation.sh"
+
+["kind:phase0:stage-acer"]
+description = "Copy the lab files to a new directory on Acer over SSH"
+run = "bash scripts/kind-phase0.sh stage-acer"
+
+["kind:phase0:preflight"]
+description = "Check the target host and container runtime"
+run = "bash scripts/kind-phase0.sh preflight"
+
+["kind:phase0:install-tools"]
+description = "Install and report the pinned kind and kubectl versions"
+run = "bash scripts/kind-phase0.sh install-tools"
+
+["kind:phase0:check"]
+description = "Check the existing Phase 0 cluster without changing it"
+run = "bash scripts/kind-phase0.sh check"
+
+["kind:phase0:smoke"]
+description = "Create, check, and delete a disposable Phase 0 cluster"
+run = "bash scripts/kind-phase0.sh smoke"
+
+["backend:smoke-acer"]
+description = "Run the backend HTTP and rollback smoke test from Acer"
+run = "bash scripts/backend-smoke-acer.sh"
+
+["backend:smoke-acer:explanation"]
+description = "Explain the Acer backend smoke test without running it"
+run = "bash scripts/backend-smoke-acer-explanation.sh"

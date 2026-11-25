@@ -23,7 +23,8 @@ make kind-phase0-stage-acer
 ssh -t acer
 ```
 
-This transfers only the files needed for the test, not `.git`, `env`,
+This transfers only the allowlisted lab files, including the non-secret
+root `env` configuration. It does not transfer `.git`,
 `mise.workstation.toml`, or local credentials. Use the printed `cd` command
 in the SSH session.
 
