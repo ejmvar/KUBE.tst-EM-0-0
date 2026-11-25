@@ -1,0 +1,67 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #14251f;
+  background: #f7f9f7;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 42rem;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 6vw, 4rem) 1.25rem;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  color: #39574a;
+}
+
+section {
+  padding-block: 1rem;
+  border-top: 1px solid #ccd8d0;
+}
+
+h2,
+pre,
+.http-status {
+  margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+code,
+pre {
+  font-family: monospace;
+}
+
+.http-status {
+  color: #39574a;
+  font-size: 0.875rem;
+}
+
+.error {
+  color: #a02129;
+}
+
+pre {
+  margin-top: 0.4rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
