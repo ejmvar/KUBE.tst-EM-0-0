@@ -75,3 +75,11 @@ kind-check:
 # Delete only the em-tst-00 lab with mise.
 kind-down:
     mise run kind:down
+
+# Create or check the selected lab namespace.
+kind-namespace:
+    mise run kind:namespace
+
+# Explain old-cluster removal and new-profile creation.
+kind-profile-rebuild-explanation:
+    @bash scripts/kind-profile-rebuild-explanation.sh

@@ -1,11 +1,19 @@
 ["kind:up"]
-description = "Create the em-tst-00 local kind lab"
+description = "Create the kind cluster selected by the env profile"
 run = "bash scripts/kind-lab.sh up"
 
 ["kind:check"]
-description = "Check the em-tst-00 API and node readiness"
+description = "Check the selected kind API and node readiness"
 run = "bash scripts/kind-lab.sh check"
 
 ["kind:down"]
-description = "Delete only the em-tst-00 local kind lab"
+description = "Delete only the kind cluster selected by the env profile"
 run = "bash scripts/kind-lab.sh down"
+
+["kind:namespace"]
+description = "Create or check the namespace selected by the env profile"
+run = "bash scripts/kind-lab.sh namespace"
+
+["kind:profile-rebuild:explanation"]
+description = "Explain old-cluster removal and new-profile creation"
+run = "bash scripts/kind-profile-rebuild-explanation.sh"

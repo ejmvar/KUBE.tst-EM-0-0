@@ -11,5 +11,19 @@ kind-delete-cluster: # delete the kind cluster
 kind-get-clusters: # verify which clusters are available
 	kind get clusters
 
+.PHONY: kind-up kind-check kind-down
+kind-up: # create the em-tst-00 lab with mise
+	mise run kind:up
+kind-check: # check the em-tst-00 lab with mise
+	mise run kind:check
+kind-down: # delete only the em-tst-00 lab with mise
+	mise run kind:down
+
+.PHONY: kind-namespace kind-profile-rebuild-explanation
+kind-namespace: # create or check the selected lab namespace
+	mise run kind:namespace
+kind-profile-rebuild-explanation: # explain old-cluster removal and new-profile creation
+	@bash scripts/kind-profile-rebuild-explanation.sh
+
 help: # show available development and kind commands
 	@grep -E '^[a-zA-Z0-9_-]+:.*#' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*# "}; {printf "%-24s %s\n", $$1, $$2}'
