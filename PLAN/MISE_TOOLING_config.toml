@@ -1,0 +1,411 @@
+[tools]
+
+# ------------------------------
+# https://pemistahl.github.io/grex-js/
+# https://github.com/pemistahl/grex
+grex = "latest"
+# ------------------------------
+# https://worktrunk.dev/merge/
+"cargo:worktrunk" = "latest"
+# ------------------------------
+# https://github.com/tbillington/kondo
+"cargo:kondo" = "latest"
+# ------------------------------
+# croc — fast, simple, secure file transfer
+# https://getcroc.com/
+# https://github.com/schollz/croc/
+# mise search croc
+# croc            Easily and securely send things from one computer to another 🐊 📦. https://github.com/schollz/croc
+croc = "latest"
+# ------------------------------
+# llmfit  A terminal tool that right-sizes LLM models to your system's RAM, CPU, and GPU. https://github.com/AlexsJones/llmfit
+llmfit = "latest"
+# ------------------------------
+# oxker  A simple tui to view & control docker containers. https://github.com/mrjackwills/oxker
+oxker = "latest"
+
+# https://github.com/saulpw/visidata
+# NO # "pipx:visidata" = "latest"
+# -- # mise uninstall pipx:visidata
+# sudo apt install visidata
+
+# mise use gitlogue
+# gitlogue cinematic Git commit replay tool Linux Tools
+# https://github.com/unhappychoice/gitlogue
+# curl -fsSL https://raw.githubusercontent.com/unhappychoice/gitlogue/main/install.sh | bash
+
+
+# https://dnsglobe.com/
+# dnsglobe — Rust application __ Lib.rs
+# 514-labs_dnsglobe_ Global DNS propagation checker TUI — watch a DNS record propagate across 34 public resolvers worldwide, on a world map in your terminal
+# dnsglobe DNS propagation checker
+# https://github.com/unhappychoice/gitlogue
+# cargo:dnsglobe  Global DNS propagation checker TUI — watch a DNS record propagate across 34 public resolv...
+"cargo:dnsglobe" = "latest"
+
+
+
+
+
+
+
+
+# ------------------------------
+#"cargo" = "latest"
+
+
+# ::::::::::::::::::::::::::::::
+# See the registry
+# https://mise.jdx.dev/registry.html
+# ::::::::::::::::::::::::::::::
+# Ensure auto complete on shell prompt
+usage = "latest"
+
+rust = "latest"
+#cargo = "latest"
+# [!TIP] If you find that installing cargo: tools
+# is slow (because they compile from source),
+#you can add cargo-binstall = "latest" to your
+# tools list. Mise will automatically try to
+# use cargo-binstall to download
+# pre-compiled binaries instead of compiling them,
+# which is much faster.
+cargo-binstall = "latest"
+
+# --- Tools installed via Cargo ---
+# Note: These require 'rust' to be installed and 'cargo' to be in your PATH.
+"cargo:rust-script" = "latest"
+
+# Terminal emulator
+zellij="latest"
+
+# ### SECURITY TOOLS ###
+"aqua:getsops/sops"="latest"
+# https://github.com/FiloSottile/age
+"age"="latest"
+
+
+
+# ::::::::::::::::::::::::::::::
+
+ruby = "latest"
+
+
+node = "22.22.0"
+bun="latest"
+# pnpm = "latest"
+pnpm = "12.4.1"
+# ["pnpm:defuddle"] = "latest"
+
+
+
+watchexec = "latest"
+bat = "latest"
+jq = "latest"
+yq = "latest"
+
+ripgrep="latest"
+fzf = "latest"
+
+zoxide = "latest"
+
+yazi = "latest"
+
+# https://just.systems/man/en/
+just  = "latest"
+
+# https://github.com/semgrep/semgrep
+# semgrep = "latest"
+# "pypi:semgrep" = "latest"
+#"pipx:semgrep" = "latest"
+"pypi:semgrep" = { version = "1.177.0", install_env = { UV_PYTHON = "3.12" } }
+# "pypi:semgrep" = { version = "1.177.0", uvx_args = "--python 3.12" }
+
+
+python = "3.14.3"
+#python = "3.14"
+
+uv="latest"
+pipx = "latest"
+ruff = "latest"
+"pipx:mdv" = "latest"
+# https://tmuxp.git-pull.com/
+"pipx:tmuxp"="latest"
+
+
+
+go = "latest"
+
+
+neovim="latest"
+
+
+# AWS
+terraform = "latest"
+# tftools = "latest"
+# terraform-docs                aqua:terraform-docs/terraform-docs asdf:looztra/asdf-terraform-docs
+# terraform-ls                  aqua:hashicorp/terraform-ls asdf:mise-plugins/mise-hashicorp
+# terraform-lsp                 aqua:juliosueiras/terraform-lsp asdf:bartlomiejdanek/asdf-terraform-lsp
+# terraform-validator           aqua:thazelart/terraform-validator asdf:looztra/asdf-terraform-validator
+# terraformer                   aqua:GoogleCloudPlatform/terraformer asdf:gr1m0h/asdf-terraformer
+# terragrunt                    aqua:gruntwork-io/terragrunt asdf:gruntwork-io/asdf-terragrunt
+# terramate                     aqua:terramate-io/terramate asdf:martinlindner/asdf-terramate
+# terrascan                     aqua:tenable/terrascan asdf:hpdobrica/asdf-terrascan
+# tf-summarize                  aqua:dineshba/tf-summarize asdf:adamcrews/asdf-tf-summarize
+# tfc-agent                     http:tfc-agent asdf:mise-plugins/mise-hashicorp
+# tfctl                         aqua:flux-iac/tofu-controller/tfctl asdf:deas/asdf-tfctl
+# tfenv                         aqua:tfutils/tfenv asdf:carlduevel/asdf-tfenv
+# tflint                        aqua:terraform-linters/tflint asdf:skyzyx/asdf-tflint
+# tfmigrate                     aqua:minamijoyo/tfmigrate asdf:dex4er/asdf-tfmigrate
+# tfnotify                      aqua:mercari/tfnotify asdf:jnavarrof/asdf-tfnotify
+# tfsec                         aqua:aquasecurity/tfsec asdf:woneill/asdf-tfsec
+# tfstate-lookup                aqua:fujiwara/tfstate-lookup asdf:carnei-ro/asdf-tfstate-lookup
+# tfswitch                      github:warrensbox/terraform-switcher asdf:iul1an/asdf-tfswitch
+# tfupdate                      aqua:minamijoyo/tfupdate asdf:yuokada/asdf-tfupdate
+
+
+tree-sitter = "latest"
+
+
+# Jujutsu
+jj = "latest"
+
+# lazygit="last"
+"aqua:jesseduffield/lazygit"="latest"
+"aqua:jesseduffield/lazydocker"="latest"
+"aqua:Lifailon/lazyjournal"="latest"
+"aqua:Adembc/lazyssh"="latest"
+"aqua:AlexanderGrooff/mermaid-ascii"="latest"
+
+# "	github:traefik/traefik"="latest"
+
+
+
+
+
+"github:BurntSushi/ripgrep" = "latest"
+
+
+# ::::::::::::::::::::::::::::::
+
+# GENTLEMAN
+# # --- old - why?
+# #qq@qq-l230:/W/Fazt.dev/django.0001$ which -a engram
+# #/home/qq/.local/share/mise/installs/go/1.26.0/bin/engram
+# #/home/qq/.local/share/mise/shims/engram
+# # ---
+# # "github:Gentleman-Programming/engram"="latest"
+# # ###   or: go install github.com/Gentleman-Programming/engram/cmd/engram@latest
+# # "github/Gentleman-Programming/engram/cmd/engram"="latest"
+# engram = "latest"
+# "go:github.com/Gentleman-Programming/engram/v2/cmd/engram" = "latest"
+
+#"npm:pi" = "latest"
+#"npm:gentle-pi" = "latest"
+
+#@earendil-works/pi-coding-agent
+#20261010-182931
+#mise use -g npm:gentle-pi@4.0.0
+
+
+
+# ::::::::::::::::::::::::::::::
+
+# hunk PR s diff management
+#https://github.com/modem-dev/hunk
+#"node:npm i -g hunkdiff"
+"npm:hunkdiff" = "latest"
+herdr = "latest"
+shellcheck = "latest"
+# ["npm:hunk"] = "latest"
+# # ["pnpm:hunk"] = "latest"
+# # ["pnpm:hunkdiff"] = "latest"
+# # # ["pnpm:defuddle"] = "latest"
+# # # ["pnpm:defuddle"] = "latest"
+# # # ["pnpm:defuddle"] = "latest"
+
+# ------------------------------
+# npm install -g agent-browser
+"npm:agent-browser" = "latest"
+chezmoi = "2.73.3"
+fastfetch = "latest"
+
+
+
+
+k3sup = "latest"
+kustomize = "latest"
+# opentofu  OpenTofu lets you declaratively manage your cloud infrastructure. https://github.com/opentofu/opentofu
+opentofu = "latest"
+k0sctl = "latest"
+# then run: 
+# agent-browser install --with-deps
+
+
+
+# https://mise.jdx.dev/registry.html
+kuttl = "latest"
+kubectl-kuttl = "latest"
+"kind" = "latest"
+# "aqua:kudobuilder/kuttl" = "latest"
+minikube="latest"
+# https://github.com/kubernetes/kubernetes
+"kubectl"="latest"
+helm = "latest"
+# https://github.com/jonashackt/crossplane-kuttl
+timoni = { version = "latest", workflow = "release.yaml" }
+krew = "latest"
+# cue                       The home of the CUE language! Validate and define text-based and dynamic configuration. https://github.com/cue-lang/cue
+cue = "latest"
+# k9s   Kubernetes CLI To Manage Your Clusters In Style. https://github.com/derailed/k9s
+k9s = "latest"
+
+# stern                    ⎈ Multi pod and container log tailing for Kubernetes -- Friendly fork of https://github.com/wercker/stern. https://github.com/stern/stern
+stern = "latest"
+
+# kubie                      A more powerful alternative to kubectx and kubens. https://github.com/kubie-org/kubie
+kubie = "latest"
+k3s = "1.37.1+k3s1"
+
+
+
+# ------------------------------
+[settings]
+activate_aggressive = true
+# Keeping this false is the default;.
+# set to true if you want to use features like 'mise run --watch'
+
+experimental = true
+idiomatic_version_file_enable_tools = ["python"]
+
+[settings.python]
+compile = false
+
+[tasks.mise-install]
+run="""
+# https://mise.jdx.dev/getting-started.html
+curl https://mise.run | sh
+
+"""
+
+[tasks.uv-install-deps]
+run = ["uv pip install -r requirements.txt"]
+
+[tasks.py-test]
+run = ["pytest ."]
+
+# [tasks.000-introubleReshim]
+# description='''Troubleshooting
+# If the command isn't recognized immediately, you might need to force mise to rescan your binaries:'''
+# run = '''
+# mise reshim
+# mise install cargo-binstall
+# mise install
+# mise doctor
+# '''
+
+
+[tasks.000-setup-000-initial-steps]
+description = "Initial bootstrap to install Rust, binstall, and cargo tools in the correct order"
+run = [
+  "mise install usage",                 # Add usage to properly autocomplete in shell cli
+  "mise use    usage",                  # Add usage to properly autocomplete in shell cli
+  "mise use -g usage",                  # Add usage to properly autocomplete in shell cli
+  "mise plugin uninstall rust || true", # Remove the conflicting plugin if it exists
+  "mise install rust@latest",           # Install Rust first
+  "mise reshim",                        # Make 'cargo' available
+  "mise install cargo-binstall",        # Install binstall for speed
+  "mise install",                       # Install everything else in the config
+  "mise reshim",                        # Final sync
+  "echo '✅ Environment setup complete!'",
+  "mise ls",
+  "mise doctor"
+]
+
+
+[tasks.000-setup-01-completion]
+description = "Add competion for bash shell"
+run = [
+  "mkdir -p ~/.local/share/bash-completion/completions/",
+  "mise completion bash --include-bash-completion-lib > ~/.local/share/bash-completion/completions/mise",
+# "eval "$(/home/qq/.local/bin/mise activate bash)", # added by https://mise.run/bash
+  "echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc",
+  "source ~/.bashrc",
+  "echo Try:    mise r TAB",
+  "echo Maybe: source ~/.bashrc",
+]
+
+
+
+# ::::::::::::::::::::::::::::::
+# ### SUGGESTED at:
+# ### - https://mise.jdx.dev/dev-tools/
+# 
+# [tasks.000-reshim]
+# description = "Force mise to rescan binaries"
+# run = "mise reshim"
+# 
+# 
+# Table Format (Recommended)
+# The cleanest way to specify nested options is using TOML tables:
+# 
+# 
+# [tools."http:my-tool"]
+# version = "1.0.0"
+# 
+# [tools."http:my-tool".platforms]
+# macos-x64 = {
+#   url = "https://example.com/my-tool-macos-x64.tar.gz",
+#   checksum = "sha256:abc123",
+# }
+# linux-x64 = {
+#   url = "https://example.com/my-tool-linux-x64.tar.gz",
+#   checksum = "sha256:def456",
+# }
+# 
+# 
+# Generic Nested Support
+# Any backend can use nested options for organizing complex configurations:
+# 
+# 
+# [tools."custom:my-backend"]
+# version = "1.0.0"
+# 
+# [tools."custom:my-backend".database]
+# host = "localhost"
+# port = 5432
+# 
+# [tools."custom:my-backend".cache.redis]
+# host = "redis.example.com"
+# port = 6379
+# 
+# 
+# Tool postinstall commands
+# Run a command immediately after a tool finishes installing by adding a postinstall field to that tool's configuration. This is separate from [hooks].postinstall and applies only to when a specific tool is installed.
+# 
+# 
+# [tools]
+# node = { version = "22", postinstall = "corepack enable" }
+# 
+# 
+# 
+# ::::::::::::::::::::::::::::::
+# 
+# https://mise.jdx.dev/registry.html
+# 
+# 
+# 
+# 
+# ::::::::::::::::::::::::::::::
+
+
+# [tools."https://github.com/containerscrew/tftools"]
+# version = "latest"
+
+
+
+
+
+
+
+
