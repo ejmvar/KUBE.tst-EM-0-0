@@ -1,0 +1,11 @@
+["backend:local:serve"]
+description = "Start the Flask development server on loopback"
+run = "bash scripts/backend-local-serve.sh"
+
+["backend:local:check"]
+description = "Check the three minimal Flask HTTP endpoints"
+run = "bash scripts/test-curl--local-backend.sh"
+
+["backend:local:explanation"]
+description = "Explain local Flask verification without running it"
+run = "bash scripts/backend-local-explanation.sh"

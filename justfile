@@ -83,3 +83,15 @@ kind-namespace:
 # Explain old-cluster removal and new-profile creation.
 kind-profile-rebuild-explanation:
     @bash scripts/kind-profile-rebuild-explanation.sh
+
+# Start the local Flask development server.
+backend-local-serve:
+    bash scripts/backend-local-serve.sh
+
+# Verify the three Flask endpoints over HTTP.
+backend-local-check:
+    bash scripts/test-curl--local-backend.sh
+
+# Explain local Flask verification.
+backend-local-explanation:
+    @bash scripts/backend-local-explanation.sh

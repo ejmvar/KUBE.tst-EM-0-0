@@ -25,5 +25,14 @@ kind-namespace: # create or check the selected lab namespace
 kind-profile-rebuild-explanation: # explain old-cluster removal and new-profile creation
 	@bash scripts/kind-profile-rebuild-explanation.sh
 
+.PHONY: backend-local-serve backend-local-check backend-local-explanation
+backend-local-serve: # start the local Flask development server
+	bash scripts/backend-local-serve.sh
+backend-local-check: # verify the three Flask endpoints over HTTP
+	bash scripts/test-curl--local-backend.sh
+backend-local-explanation: # explain local Flask verification
+	bash scripts/backend-local-explanation.sh
+
+
 help: # show available development and kind commands
 	@grep -E '^[a-zA-Z0-9_-]+:.*#' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*# "}; {printf "%-24s %s\n", $$1, $$2}'

@@ -19,5 +19,19 @@ def tell_a_joke():
     hostname = socket.gethostname()
     return f"{joke}\n(Served by: {hostname})\n"
 
+
+@app.route("/health")
+def tell_health():
+    return f"Ok"
+
+
+
+@app.route("/health/hostname")
+def tell_hostname():
+    hostname = socket.gethostname()
+    return f"(Served by: {hostname})\n"
+
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
