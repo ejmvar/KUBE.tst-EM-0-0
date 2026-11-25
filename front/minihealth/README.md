@@ -23,7 +23,7 @@ origin. `npm run build` produces static files in `dist/`. Vite preview uses
 the same proxy; a production host serving `dist/` must provide its own
 equivalent `/api` routing.
 
-## Test
+## Test and review visual changes
 
 From this directory:
 
@@ -33,4 +33,7 @@ npm test
 ```
 
 Tests run in headless Chromium and use fixed responses, so Flask does not
-need to be running.
+need to be running. The checked-in Linux baselines cover desktop success and
+a mobile health failure. Compare on Linux for consistent rendering.
+After an intentional UI change, run `npm test -- --update` and review the
+changed PNGs in `src/__screenshots__/` before accepting them.
