@@ -5,6 +5,8 @@ authorized tailnet devices. It uses HTTP on port 8085 within Tailscale, not
 public internet access. Tailscale encrypts traffic between tailnet nodes;
 HTTP itself is not end-to-end TLS. See [DNS and access options](phase-2-dns-options.md)
 for the tradeoffs and future HTTPS or non-Tailscale choices.
+For MagicDNS, machine naming, policy, and alternatives, see
+[host names and access](phase-2-host-names.md).
 
 Run `make kind-phase2-explanation`, `just kind-phase2-explanation`, or
 `mise run kind:phase2:explanation` for the [ordered steps and signals](../scripts/kind-phase2-explanation.sh).
