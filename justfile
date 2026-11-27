@@ -168,18 +168,6 @@ minihealth-kind-check:
 minihealth-kind-explanation:
     @bash scripts/minihealth-kind-explanation.sh
 
-# Create, check, and delete a disposable lab.
-kind-phase0-smoke:
-    mise run kind:phase0:smoke
-
-# On Acer, verify backend HTTP and rollback.
-backend-smoke-acer:
-    mise run backend:smoke-acer
-
-# Explain the backend smoke workflow.
-backend-smoke-acer-explanation:
-    @bash scripts/backend-smoke-acer-explanation.sh
-
 # Deploy Flask and Minihealth in separate kind namespaces.
 kind-phase1-deploy:
     mise run kind:phase1:deploy
@@ -203,6 +191,10 @@ kind-phase2-serve:
 # Check the frontend through its Tailscale name.
 kind-phase2-check:
     mise run kind:phase2:check
+
+# Test Phase 2 routing without a cluster or Tailscale.
+kind-phase2-test:
+    bash scripts/test-kind-phase2.sh
 
 # Explain Phase 2 without running it.
 kind-phase2-explanation:
