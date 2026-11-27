@@ -1,0 +1,11 @@
+#!/bin/bash
+
+uv run python backend/src/backend/app.py &
+server_pid=$!
+
+for i in {1..25}; do
+  curl -fsS http://localhost:8080 && break
+  sleep 0.2
+done
+
+wait "$server_pid"

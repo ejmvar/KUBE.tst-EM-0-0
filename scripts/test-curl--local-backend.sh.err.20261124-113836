@@ -1,0 +1,13 @@
+#!/bin/bash
+
+timeout 10s uv run backend/src/backend/app.py &
+server_pid=$!
+
+# Wait up to 5 seconds for the server to respond
+for i in {1..25}; do
+  curl -fsS http://localhost:8080 >/dev/null 2>&1 && break
+  sleep 0.2
+done
+
+curl http://localhost:8080
+wait "$server_pid"

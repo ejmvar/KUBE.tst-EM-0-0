@@ -76,13 +76,37 @@ kind-check:
 kind-down:
     mise run kind:down
 
-# Create or check the selected lab namespace.
-kind-namespace:
-    mise run kind:namespace
+# Explain the Phase 0 workflow.
+kind-phase0-explanation:
+    @bash scripts/kind-phase0-explanation.sh
 
-# Explain old-cluster removal and new-profile creation.
-kind-profile-rebuild-explanation:
-    @bash scripts/kind-profile-rebuild-explanation.sh
+# Copy lab files to Acer over SSH.
+kind-phase0-stage-acer:
+    bash scripts/kind-phase0.sh stage-acer
+
+# Check the target host and container runtime.
+kind-phase0-preflight:
+    mise run kind:phase0:preflight
+
+# Install the pinned kind and kubectl versions.
+kind-phase0-install-tools:
+    bash scripts/kind-phase0.sh install-tools
+
+# Check the existing lab without changing it.
+kind-phase0-check:
+    mise run kind:phase0:check
+
+# Create, check, and delete a disposable lab.
+kind-phase0-smoke:
+    mise run kind:phase0:smoke
+
+# On Acer, verify backend HTTP and rollback.
+backend-smoke-acer:
+    mise run backend:smoke-acer
+
+# Explain the backend smoke workflow.
+backend-smoke-acer-explanation:
+    @bash scripts/backend-smoke-acer-explanation.sh
 
 # Start the local Flask development server.
 backend-local-serve:
@@ -120,34 +144,26 @@ backend-kind-forward:
 backend-kind-explanation:
     @bash scripts/backend-kind-explanation.sh
 
-# Explain the Phase 0 workflow.
-kind-phase0-explanation:
-    @bash scripts/kind-phase0-explanation.sh
+# Create or check the selected lab namespace.
+kind-namespace:
+    mise run kind:namespace
 
-# Copy lab files to Acer over SSH.
-kind-phase0-stage-acer:
-    bash scripts/kind-phase0.sh stage-acer
+# Explain old-cluster removal and new-profile creation.
+kind-profile-rebuild-explanation:
+    @bash scripts/kind-profile-rebuild-explanation.sh
 
-# Check the target host and container runtime.
-kind-phase0-preflight:
-    mise run kind:phase0:preflight
+# Build, load, and deploy Minihealth to kind.
+minihealth-kind-deploy:
+    bash scripts/minihealth-kind.sh deploy
 
-# Install the pinned kind and kubectl versions.
-kind-phase0-install-tools:
-    bash scripts/kind-phase0.sh install-tools
+# Forward Minihealth to localhost:8083.
+minihealth-kind-forward:
+    bash scripts/minihealth-kind.sh forward
 
-# Check the existing lab without changing it.
-kind-phase0-check:
-    mise run kind:phase0:check
+# Verify the frontend and its three API routes.
+minihealth-kind-check:
+    bash scripts/test-minihealth-kind.sh
 
-# Create, check, and delete a disposable lab.
-kind-phase0-smoke:
-    mise run kind:phase0:smoke
-
-# On Acer, verify backend HTTP and rollback.
-backend-smoke-acer:
-    mise run backend:smoke-acer
-
-# Explain the backend smoke workflow.
-backend-smoke-acer-explanation:
-    @bash scripts/backend-smoke-acer-explanation.sh
+# Explain the Minihealth kind workflow.
+minihealth-kind-explanation:
+    @bash scripts/minihealth-kind-explanation.sh
