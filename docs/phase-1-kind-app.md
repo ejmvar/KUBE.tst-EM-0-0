@@ -34,6 +34,27 @@ After starting the forward, open <http://127.0.0.1:8083> and expect HTTP 200
 on `/`, `/health`, and `/health/hostname` in the Minihealth cards. Use Ctrl-C
 to stop forwarding, or set `PHASE1_PORT` if 8083 is busy.
 
+## Verify the frontend-to-backend route
+
+After deploying, run the live check against the cluster:
+
+```sh
+CLUSTER_NAME=test-0 make kind-phase1-check
+```
+
+Replace `test-0` with the cluster name on the host. Success ends with
+`Phase 1 HTTP check passed: Minihealth and all three proxied Flask routes.`
+The test checks the frontend Service, requests `/api/`, `/api/health`, and
+`/api/health/hostname`, and verifies that the reported hostname belongs to
+a backend pod. NGINX strips `/api/` and uses the cross-namespace Kubernetes
+Service `joke-app.em-tst-backend.svc.cluster.local`; the short name
+`joke-app` would resolve in the frontend namespace instead.
+
+For a browser check, start `CLUSTER_NAME=test-0 make kind-phase1-forward`
+in another terminal and open `http://127.0.0.1:8083/`. Expect three HTTP 200
+cards. The cluster test exercises the running image; after changing
+`front/minihealth/nginx.conf`, deploy the new image before checking.
+
 ## If a step fails
 
 - An image failure usually means the selected runtime differs from the
