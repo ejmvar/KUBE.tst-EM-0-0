@@ -1,0 +1,15 @@
+["kind:phase1:deploy"]
+description = "Deploy Flask and Minihealth in separate kind namespaces"
+run = "bash scripts/kind-phase1.sh deploy"
+
+["kind:phase1:check"]
+description = "Verify Minihealth and its proxied Flask routes"
+run = "bash scripts/kind-phase1.sh check"
+
+["kind:phase1:forward"]
+description = "Forward Minihealth to the local browser"
+run = "exec bash scripts/kind-phase1.sh forward"
+
+["kind:phase1:explanation"]
+description = "Explain Phase 1 without running it"
+run = "bash scripts/kind-phase1-explanation.sh"

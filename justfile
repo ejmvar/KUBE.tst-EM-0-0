@@ -151,3 +151,19 @@ backend-smoke-acer:
 # Explain the backend smoke workflow.
 backend-smoke-acer-explanation:
     @bash scripts/backend-smoke-acer-explanation.sh
+
+# Deploy Flask and Minihealth in separate kind namespaces.
+kind-phase1-deploy:
+    mise run kind:phase1:deploy
+
+# Verify Minihealth and its proxied Flask routes.
+kind-phase1-check:
+    mise run kind:phase1:check
+
+# Forward Minihealth to the local browser.
+kind-phase1-forward:
+    mise run kind:phase1:forward
+
+# Explain Phase 1 without running it.
+kind-phase1-explanation:
+    @bash scripts/kind-phase1-explanation.sh

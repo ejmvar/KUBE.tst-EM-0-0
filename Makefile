@@ -66,6 +66,15 @@ backend-smoke-acer: # on Acer, verify backend HTTP and rollback
 backend-smoke-acer-explanation: # explain the backend smoke workflow
 	bash scripts/backend-smoke-acer-explanation.sh
 
+.PHONY: kind-phase1-deploy kind-phase1-check kind-phase1-forward kind-phase1-explanation
+kind-phase1-deploy: # deploy Flask and Minihealth in separate kind namespaces
+	mise run kind:phase1:deploy
+kind-phase1-check: # verify Minihealth and its proxied Flask routes
+	mise run kind:phase1:check
+kind-phase1-forward: # forward Minihealth to the local browser
+	mise run kind:phase1:forward
+kind-phase1-explanation: # explain Phase 1 without running it
+	bash scripts/kind-phase1-explanation.sh
 
 help: # show available development and kind commands
 	@grep -E '^[a-zA-Z0-9_-]+:.*#' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*# "}; {printf "%-24s %s\n", $$1, $$2}'

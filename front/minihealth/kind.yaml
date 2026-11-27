@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minihealth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minihealth
+  template:
+    metadata:
+      labels:
+        app: minihealth
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: minihealth
+          image: IMAGE_PLACEHOLDER
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: minihealth
+spec:
+  selector:
+    app: minihealth
+  ports:
+    - port: 80
+      targetPort: 80
