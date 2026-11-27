@@ -167,3 +167,15 @@ kind-phase1-forward:
 # Explain Phase 1 without running it.
 kind-phase1-explanation:
     @bash scripts/kind-phase1-explanation.sh
+
+# Share the local frontend privately with Tailscale.
+kind-phase2-serve:
+    mise run kind:phase2:serve
+
+# Check the frontend through its Tailscale name.
+kind-phase2-check:
+    mise run kind:phase2:check
+
+# Explain Phase 2 without running it.
+kind-phase2-explanation:
+    @bash scripts/kind-phase2-explanation.sh

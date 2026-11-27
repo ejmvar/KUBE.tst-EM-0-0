@@ -1,0 +1,11 @@
+["kind:phase2:serve"]
+description = "Share the local frontend privately with Tailscale"
+run = "exec bash scripts/kind-phase2.sh serve"
+
+["kind:phase2:check"]
+description = "Check the frontend through its Tailscale name"
+run = "bash scripts/kind-phase2.sh check"
+
+["kind:phase2:explanation"]
+description = "Explain Phase 2 without running it"
+run = "bash scripts/kind-phase2-explanation.sh"
