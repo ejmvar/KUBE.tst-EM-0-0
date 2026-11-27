@@ -2,6 +2,10 @@
 
 For a new Linux Mint host, follow the [Phase 0 runbook](docs/phase-0-kind-lab.md).
 It includes the commands to repeat the smoke test over SSH on `acer`.
+Once kind is ready, follow [Phase 1: deploy Flask and Minihealth in two namespaces](docs/phase-1-kind-app.md).
+For the next step, compare [Phase 2 DNS and access options](docs/phase-2-dns-options.md).
+Use the [Phase 2 Tailscale runbook](docs/phase-2-tailscale.md) for private access by machine name.
+See [host names and access](docs/phase-2-host-names.md) for MagicDNS and alternatives.
 To replace a disposable cluster and create a namespace from a separate
 configuration profile, see the [kind profile rebuild runbook](docs/kind-profile-rebuild.md).
 

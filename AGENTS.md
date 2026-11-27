@@ -1,5 +1,7 @@
 # Repository guide
 
+- Once the user accepts changes, avoid complex review ceremonies; retain necessary checks and safety requirements.
+- Use small semantic commits that keep each behavior with its tests and documentation.
 - Read `CONSTITUTION.md` before planning or reviewing infrastructure changes. Start with kind, add one service at a time, and test each stage. The backend, frontend, database, and storage are roadmap items, not existing packages.
 - `mise.toml` lists the Kubernetes tools, but its environment also sources user-local credential scripts and expects `.venv`. Use installed binaries directly for focused checks; neither Python nor ESP-IDF is required by the cluster scripts.
 

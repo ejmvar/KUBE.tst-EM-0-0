@@ -12,6 +12,7 @@ spec:
       labels:
         app: minihealth
     spec:
+      automountServiceAccountToken: false
       containers:
         - name: minihealth
           image: IMAGE_PLACEHOLDER

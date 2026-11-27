@@ -42,6 +42,7 @@ backend-smoke-acer: # on Acer, verify backend HTTP and rollback
 backend-smoke-acer-explanation: # explain the backend smoke workflow
 	bash scripts/backend-smoke-acer-explanation.sh
 
+
 .PHONY: backend-local-serve backend-local-check backend-local-explanation
 backend-local-serve: # start the local Flask development server
 	bash scripts/backend-local-serve.sh
@@ -79,6 +80,29 @@ minihealth-kind-check: # verify the frontend and its three API routes
 	bash scripts/test-minihealth-kind.sh
 minihealth-kind-explanation: # explain the Minihealth kind workflow
 	bash scripts/minihealth-kind-explanation.sh
+
+
+# ==============================
+# kind-phase1
+# ------------------------------
+.PHONY: kind-phase1-deploy kind-phase1-check kind-phase1-forward kind-phase1-explanation
+kind-phase1-deploy: # deploy Flask and Minihealth in separate kind namespaces
+	mise run kind:phase1:deploy
+kind-phase1-check: # verify Minihealth and its proxied Flask routes
+	mise run kind:phase1:check
+kind-phase1-forward: # forward Minihealth to the local browser
+	mise run kind:phase1:forward
+kind-phase1-explanation: # explain Phase 1 without running it
+	bash scripts/kind-phase1-explanation.sh
+
+.PHONY: kind-phase2-serve kind-phase2-check kind-phase2-explanation
+kind-phase2-serve: # share the local frontend privately with Tailscale
+	mise run kind:phase2:serve
+kind-phase2-check: # check the frontend through its Tailscale name
+	mise run kind:phase2:check
+kind-phase2-explanation: # explain Phase 2 without running it
+	bash scripts/kind-phase2-explanation.sh
+
 
 help: # show available development and kind commands
 	@grep -E '^[a-zA-Z0-9_-]+:.*#' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*# "}; {printf "%-24s %s\n", $$1, $$2}'
