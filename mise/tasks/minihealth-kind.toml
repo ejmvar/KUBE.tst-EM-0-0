@@ -1,0 +1,15 @@
+["minihealth:kind:deploy"]
+description = "Build, load, and deploy Minihealth to kind"
+run = "bash scripts/minihealth-kind.sh deploy"
+
+["minihealth:kind:forward"]
+description = "Forward Minihealth to localhost:8083"
+run = "bash scripts/minihealth-kind.sh forward"
+
+["minihealth:kind:check"]
+description = "Verify the frontend and its three API routes"
+run = "bash scripts/test-minihealth-kind.sh"
+
+["minihealth:kind:explanation"]
+description = "Explain the Minihealth kind workflow"
+run = "bash scripts/minihealth-kind-explanation.sh"

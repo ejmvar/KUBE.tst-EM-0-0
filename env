@@ -16,7 +16,7 @@ K_ROLLOUT_WAIT=90s
 #
 
 # --- Local kind lab ---
-CLUSTER_NAME=em-tst-00
+CLUSTER_NAME=em-tst-001
 
 
 # Backend application

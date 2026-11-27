@@ -23,6 +23,11 @@ origin. `npm run build` produces static files in `dist/`. Vite preview uses
 the same proxy; a production host serving `dist/` must provide its own
 equivalent `/api` routing.
 
+## Run in kind
+
+See [Verify Minihealth in kind](../../docs/minihealth-kind.md) to open the
+deployed frontend and check its three backend routes.
+
 ## Test and review visual changes
 
 From this directory:
