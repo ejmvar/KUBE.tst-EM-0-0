@@ -95,11 +95,13 @@ kind-phase1-forward: # forward Minihealth to the local browser
 kind-phase1-explanation: # explain Phase 1 without running it
 	bash scripts/kind-phase1-explanation.sh
 
-.PHONY: kind-phase2-serve kind-phase2-check kind-phase2-explanation
+.PHONY: kind-phase2-serve kind-phase2-check kind-phase2-test kind-phase2-explanation
 kind-phase2-serve: # share the local frontend privately with Tailscale
 	mise run kind:phase2:serve
 kind-phase2-check: # check the frontend through its Tailscale name
 	mise run kind:phase2:check
+kind-phase2-test: # test Phase 2 routing without a cluster or Tailscale
+	bash scripts/test-kind-phase2.sh
 kind-phase2-explanation: # explain Phase 2 without running it
 	bash scripts/kind-phase2-explanation.sh
 

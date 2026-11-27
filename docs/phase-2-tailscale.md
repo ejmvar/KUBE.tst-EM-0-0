@@ -47,3 +47,12 @@ if 8085 is in use; if the local forward uses another port, set `PHASE1_PORT`
 to the same value when starting the forward and Serve. A changed port is
 part of the URL. If the proxy fails, inspect Serve output and tailnet policy;
 if the UI fails, confirm the Phase 1 check and both foreground processes.
+
+## Test the workflow without a cluster
+
+Run `make kind-phase2-test`, `just kind-phase2-test`, or
+`mise run kind:phase2:test`. Each runs
+[`scripts/test-kind-phase2.sh`](../scripts/test-kind-phase2.sh), which uses
+stubbed Tailscale and HTTP commands to check routing, port overrides, and
+invalid inputs. Success prints `Phase 2 routing tests passed.` A failure
+exits nonzero. This is not a substitute for the live tailnet check above.

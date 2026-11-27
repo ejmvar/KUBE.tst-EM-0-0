@@ -11,4 +11,7 @@ Objective: Reach Minihealth privately through the host's Tailscale machine name.
 3. From an authorized tailnet device, open the printed URL or run the Phase 2 check.
    Success: Minihealth and the three proxied backend endpoints respond.
    Failure: Check tailnet DNS, access policy, and both foreground processes.
+4. Optionally run the offline Phase 2 test before changing the workflow.
+   Success: The stubbed routing and input checks pass.
+   Failure: Inspect the failing test; the offline test does not prove live connectivity.
 EOF
